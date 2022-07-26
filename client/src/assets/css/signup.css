@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+.container {
+display: flex;
+}
+.form-container {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+.image-container {
+  width: 50%;
+  display: inline-block;
+  min-width: 200px;
+}
+

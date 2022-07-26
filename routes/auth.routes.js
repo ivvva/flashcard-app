@@ -69,7 +69,7 @@ router.post("/:userId/newCollection", (req, res) => {
       const newCollectionId = newCollection._id.toString();
       res.status(201).json(newCollection);
       User.findByIdAndUpdate(
-        "62dfc9e23bf207ea4ab5bf75",
+        userId,
         {
           $push: { collections: { title: title, flashcardNumber: flashcardNumber, flashcards: flashcards } },
         },
