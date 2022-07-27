@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import MyCollections from "./pages/MyCollections";
 import NewCollection from "./pages/NewCollection";
 import NewCard from "./pages/NewCard";
+import Training from "./pages/Training";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/:userId/new-collection" element={<NewCollection />} />
         <Route path="/:userId/my-collections" element={<MyCollections />} />
         <Route path="/:userId/:newCollectionId/new-card/" element={<NewCard />} />
+        <Route path="/:userId/:collectionId/train" element={<Training />} />
       </Routes>
     </div>
   );

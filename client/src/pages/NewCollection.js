@@ -12,7 +12,7 @@ export default function NewCollection() {
     const handleSubmit = e => {
         e.preventDefault()
 		const requestBody = { title }
-		axios.post('http://localhost:5005/api/auth/:userId/newCollection', requestBody)
+		axios.post(`http://localhost:5005/api/user/${userId}/newCollection`, requestBody)
         .then(response => {
             const newCollectionId = response.data._id
 				navigate(`/${userId}/${newCollectionId}/new-card`)

@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const { collectionSchema } = require("./Collection.model");
 const userSchema = new Schema(
   {
     name: {
@@ -6,7 +7,10 @@ const userSchema = new Schema(
     },
     password: String,
     email: String,
-    collections: []
+    // collections: [collectionSchema]
+    collections: [
+      { type: Schema.Types.ObjectId, ref: "Collection", default: [] },
+    ],
   },
   {
     timestamps: true,

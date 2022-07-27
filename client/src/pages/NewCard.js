@@ -17,7 +17,7 @@ export default function NewCard() {
     e.preventDefault();
     const requestBody = { title, front, back, newCollectionId };
     axios
-      .post("http://localhost:5005/api/auth/newFlashard", requestBody)
+      .post(`http://localhost:5005/api/user/${userId}/collection/${newCollectionId}/newFlashard`, requestBody)
       .then((response) => {
         navigate(`/${userId}/${newCollectionId}/new-card`);
         window.location.reload();
@@ -51,18 +51,18 @@ export default function NewCard() {
           onClick={(e) => {
             e.preventDefault();
             const requestBody = { title, front, back, newCollectionId };
-            axios
-              .post("http://localhost:5005/api/auth/newFlashard", requestBody)
-              .then((response) => {
+            // axios
+            //   .post(`http://localhost:5005/api/user/${userId}/collection/${newCollectionId}/newFlashard`, requestBody)
+            //   .then((response) => {
                 navigate(`/${userId}/my-collections`);
-              })
-              .catch((err) => {
-                const errorDescription = err.response.data.message;
-                setErrorMessage(errorDescription);
-              });
+              // })
+              // .catch((err) => {
+              //   const errorDescription = err.response.data.message;
+              //   setErrorMessage(errorDescription);
+              // });
           }}
         >
-          Add cards
+          To collections
         </button>
       </form>
 

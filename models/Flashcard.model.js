@@ -15,4 +15,4 @@ const flashcardSchema = new Schema(
 
 const Flashcard = model("Flashcard", flashcardSchema);
 
-module.exports = Flashcard;
+module.exports = { flashcardSchema, Flashcard };

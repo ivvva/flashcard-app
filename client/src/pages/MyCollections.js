@@ -1,22 +1,32 @@
-import { React, useEffect } from 'react'
+import { React, useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import Collection from './NewCollection'
+import go from "../assets/go.png";
+import Collection from "./Collection";
 
 export default function MyCollections() {
-  useEffect(() => {
-    const getCollections = async () => {
-      const res = await axios.get('http://localhost:5005/api/auth/:userId/myCollections')
+  const { userId } = useParams();
+  const [collections, getCollections] = useState([]);
 
-      console.log(res.data)
-    }
-    getCollections()
-  }, [])
-  
+  useEffect(() => {
+    const getAllCollections = async () => {
+      const res = await axios.get(
+        `http://localhost:5005/api/user/${userId}/myCollections`
+      );
+      getCollections(res.data.collections);
+      console.log(collections);
+    };
+    getAllCollections();
+  }, []);
+
   const navigate = useNavigate();
   const { newCollectionId, title, flashcardNumber } = useParams();
 
   return (
-    <div><h1>Here my collections are gonna be displayed</h1></div>
-  )
+    <>
+      {collections.map((collection) => (
+        <Collection collection={collection}></Collection>
+      ))}
+    </>
+  );
 }
