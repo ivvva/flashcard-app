@@ -5,18 +5,21 @@
   background: #f9f9f9;
 }
 
-nav {
+.navigate {
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
+  top: 0px;
+  height: 250px;
 }
 
-nav img {
-  /* position: absolute; */
+.navigate img {
   width: 400px;
   height: 210px;
   padding-left: 40px;
+  background-color: transparent;
 }
 
 .login-btn {
@@ -30,9 +33,9 @@ nav img {
   color: #ff8ba2;
   text-decoration: none;
   padding-top: 25px;
-}
+} */
 
-.signup-btn {
+.signup {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,29 +53,28 @@ nav img {
   padding: 10px;
 }
 
-.link-container {
+ .link-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 200px;
-}
+} 
 
 article {
-  width: 1000px;
-  left: -597px;
-  top: -19px;
-  border-radius: 0px;
+margin-top: 700px;
+
 }
 
 .main-img {
   box-sizing: border-box;
   position: absolute;
+  z-index: 1;
   width: 900px;
   height: 570px;
   filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.25));
   border-radius: 20px;
   margin-left: 450px;
-  margin-top: 7vh;
+  margin-top: 15vh;
 }
 
 .bg-img {
@@ -81,7 +83,7 @@ article {
 }
 
 h2 {
-  position: absolute;
+  position: fixed;
   width: 934px;
   height: 117px;
   font-family: "Montserrat";
@@ -90,4 +92,5 @@ h2 {
   font-size: 64px;
   line-height: 78px;
   color: #00c1a6;
+  z-index: 2;
 }

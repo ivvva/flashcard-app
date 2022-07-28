@@ -9,22 +9,21 @@ import main from '../assets/main.png'
 
 export default function Home() {
 	return (<>
-		<nav>
+		<div className="navigate">
 		<Link to='/'>
 		<img src={logo} href/> 
 		</Link>
 		<div className='link-container'>
 		<a href='/login' className='login-btn'>Log In</a>
-		<a href='/signup' className='signup-btn'>Sign Up</a>
+		<a href='/signup' className='signup'>Sign Up</a>
 		</div>
-		</nav>
+		</div>
 
 		<article>
 		<div className='img-container'>
 		<img className='main-img' src={main}/>
 		<img className='bg-img' src={bg1}/>
 		</div>
-		<h2>Learn the smart way.</h2>
 		</article>
 		</>
 	)
