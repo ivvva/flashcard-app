@@ -2,13 +2,9 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const mongoose = require("mongoose");
 const User = require("../models/User.model");
-const Flashcard = require("../models/Flashcard.model");
-const Collection = require("../models/Collection.model");
-const res = require("express/lib/response");
 
-router.post("/signup", (req, res, next) => {
+router.post("/signup", (req, res) => {
   const { email, password, name } = req.body;
   console.log({ body: req.body });
   if (email === "" || password === "" || name === "") {
@@ -24,11 +20,10 @@ router.post("/signup", (req, res, next) => {
       res.status(400).json({ message: "User already exists" });
       return;
     }
-    // hash the password
+
     const salt = bcrypt.genSaltSync();
     const hashedPassword = bcrypt.hashSync(password, salt);
     let collections = []
-    // create the new user
 
     return User.create({ email, password: hashedPassword, name, collections: collections })
       .then((createdUser) => {
@@ -44,7 +39,7 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.post("/login", (req, res, next) => {
+router.post("/login", (req, res) => {
   const { email, password } = req.body;
   if (email === "" || password === "") {
     res.status(400).json({ message: "Provide email and password" });

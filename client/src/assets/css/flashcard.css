@@ -76,3 +76,9 @@ p{
 .card-number{
     background-color: transparent;
 }
+
+.next{
+    cursor: pointer;
+    margin: 20px;
+}
+

@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import go from "../assets/go.png";
+import { useParams } from "react-router-dom";
 import Collection from "./Collection";
 
 export default function MyCollections() {
@@ -11,16 +10,12 @@ export default function MyCollections() {
   useEffect(() => {
     const getAllCollections = async () => {
       const res = await axios.get(
-        `http://localhost:5005/api/user/${userId}/myCollections`
+        `${process.env.REACT_APP_BACKEND_URI}/api/user/${userId}/myCollections`
       );
       getCollections(res.data.collections);
-      console.log(collections);
     };
     getAllCollections();
   }, []);
-
-  const navigate = useNavigate();
-  const { newCollectionId, title, flashcardNumber } = useParams();
 
   return (
     <>

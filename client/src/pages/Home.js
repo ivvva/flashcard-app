@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, useNavigate, useParams } from "react-router-dom";
-import css from '../assets/css/home.css'
+import styles from '../assets/css/home.css'
 import logo from '../assets/logo.png'
-import logo2 from '../assets/logo2.png'
+
 import bg1 from '../assets/bg1.png'
 import main from '../assets/main.png'
 
@@ -15,7 +15,7 @@ export default function Home() {
 		</Link>
 		<div className='link-container'>
 		<a href='/login' className='login-btn'>Log In</a>
-		<a href='/signup' className='signup'>Sign Up</a>
+		<a href='/signup' className={styles.signuplink}>Sign Up</a>
 		</div>
 		</div>
 
