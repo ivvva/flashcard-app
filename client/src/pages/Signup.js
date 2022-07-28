@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import css from '../assets/css/signup.css'
-import main from '../assets/main.png'
+import css from "../assets/css/signup.css";
+import main from "../assets/main.png";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -35,29 +35,33 @@ export default function Signup() {
   return (
     <>
       <div className="container">
-	  <div className="form-container">
-        <h1>Signup</h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email: </label>
-          <input type="text" value={email} onChange={handleEmail} />
+        <div className="form-container sign-in-container">
+          <h1>Signup</h1>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="email">Email: </label>
+            <input type="text" value={email} onChange={handleEmail} />
 
-          <label htmlFor="password">Password: </label>
-          <input type="password" value={password} onChange={handlePassword} />
+            <label htmlFor="password">Password: </label>
+            <input type="password" value={password} onChange={handlePassword} />
 
-          <label htmlFor="name">Name: </label>
-          <input type="text" value={name} onChange={handleName} />
+            <label htmlFor="name">Name: </label>
+            <input type="text" value={name} onChange={handleName} />
 
-          <button type="submit">Sign Up</button>
-        </form>
-		</div>
-		{/* <div className="img-container"> */}
-		  {/* <img className="main" src={main}/> */}
-		  {/* </div> */}
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+        <div className="overlay-container">
+          <div className="overlay">
+            <div className="overlay-panel overlay-right">
+            <h4>Already have an account?</h4>
+        <Link to="/login" className="ghost"><p>Login</p></Link>
+          </div>
+        </div>
+        </div>
 
-        {errorMessage && <h5>{errorMessage}</h5>}
+        {errorMessage && <p>{errorMessage}</p>}
 
-        <h3>Already have an account?</h3>
-        <Link to="/login">Login</Link>
+       
       </div>
     </>
   );

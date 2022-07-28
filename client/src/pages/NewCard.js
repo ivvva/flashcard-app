@@ -34,7 +34,7 @@ export default function NewCard() {
 
   return (
     <>
-      <h1>You'll be able to create new cards here</h1>
+      <h1>Add a new card to your collection</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title: </label>
         <input type="text" value={title} onChange={handleTitle} />

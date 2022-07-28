@@ -26,7 +26,7 @@ export default function NewCollection() {
     const handleTitle= e => setTitle(e.target.value)
   return (
       <>
-   <h1>You'll be able to create a new collection here</h1>
+   <h1>Give your new collection a name!</h1>
 			<form onSubmit={handleSubmit}>
 
 				<label htmlFor="title">Title: </label>

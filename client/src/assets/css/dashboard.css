@@ -1,0 +1,50 @@
+.sidenav {
+  height: 100%;
+  width: 20px;
+  top: 0;
+  left: 0;
+  background-color: #ff8ba2;
+  position: fixed;
+  padding-top: 60px;
+  transition: 0.5s;
+  transition: ease-in 1s;
+}
+
+.sidenav-link {
+  padding: 8px 8px 8px 32px;
+  margin-top: 40px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: #e6d9d9d5;
+  display: block;
+  transition: 0.3s;
+  overflow: hidden;
+  background-color: transparent;
+  transition: all ease 0.3s;
+  opacity: 10%;
+  font-weight: 600;
+}
+
+.sidenav-link:hover {
+  color: #ffff;
+  transition: all ease 0.3s;
+}
+
+.sidenav:hover {
+  width: 250px;
+  transition: ease-in 1s;
+}
+
+.sidenav:hover > .sidenav-link {
+  opacity: 100%;
+  transition: ease-in 2s;
+}
+
+.dashboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  color: #00c1a6 ;
+  font-size: 3rem;
+}

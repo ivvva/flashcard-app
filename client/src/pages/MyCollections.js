@@ -25,7 +25,7 @@ export default function MyCollections() {
   return (
     <>
       {collections.map((collection) => (
-        <Collection collection={collection}></Collection>
+        <Collection collection={collection} key={collection._id}></Collection>
       ))}
     </>
   );

@@ -54,8 +54,8 @@ export default function Login() {
 
 			{errorMessage && <h5>{errorMessage}</h5>}
 
-			<h3>Don't have an account?</h3>
-			<Link to='/signup'>Signup</Link>
+			<h4>Don't have an account?</h4>
+			<Link to='/signup'>Sign Up</Link>
 		</>
 	)
 }
