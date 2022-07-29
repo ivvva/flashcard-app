@@ -15,7 +15,7 @@ export default function Training() {
   useEffect(() => {
     const getAllFlashcards = async () => {
       const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URI}/api/user/${userId}/collection/${collectionId}/training`
+        `/api/user/${userId}/collection/${collectionId}/training`
       );
       getFlashcards(res.data.flashcards);
       console.log(flashcards);

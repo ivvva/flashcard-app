@@ -14,7 +14,7 @@ export default function NewCollection() {
     const requestBody = { title };
     axios
       .post(
-        `${process.env.REACT_APP_BACKEND_URI}/api/user/${userId}/newCollection`,
+        `/api/user/${userId}/newCollection`,
         requestBody
       )
       .then((response) => {

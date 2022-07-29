@@ -18,7 +18,7 @@ export default function Login() {
     axios
       .post(
         axios.post(
-          `${process.env.REACT_APP_BACKEND_URI}/api/login`,
+          `/api/login`,
           requestBody
         )
       )

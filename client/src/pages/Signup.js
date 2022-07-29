@@ -16,7 +16,7 @@ export default function Signup() {
     const requestBody = { email, password, name };
     console.log({env: process.env})
     axios
-      .post(`${process.env.REACT_APP_BACKEND_URI}/api/auth/signup`, requestBody)
+      .post(`/api/auth/signup`, requestBody)
       .then((response) => {
         const userId = response.data._id;
         navigate(`/${userId}/dashboard`);

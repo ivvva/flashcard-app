@@ -10,7 +10,7 @@ export default function MyCollections() {
   useEffect(() => {
     const getAllCollections = async () => {
       const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URI}/api/user/${userId}/myCollections`
+        `$/api/user/${userId}/myCollections`
       );
       getCollections(res.data.collections);
     };

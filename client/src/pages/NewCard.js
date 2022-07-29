@@ -17,7 +17,7 @@ export default function NewCard() {
     const requestBody = { title, front, back, newCollectionId };
     axios
       .post(
-        `${process.env.REACT_APP_BACKEND_URI}/api/user/${userId}/collection/${newCollectionId}/newFlashard`,
+        `/api/user/${userId}/collection/${newCollectionId}/newFlashard`,
         requestBody
       )
       .then(() => {
