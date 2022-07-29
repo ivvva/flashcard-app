@@ -23,7 +23,17 @@ app.use("/api", allRoutes);
 const auth = require("./routes/auth.routes")
 app.use("/api/auth", auth);
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.use((req, res) => {
+  // If no routes match, send them the React HTML.
+  res.sendFile(__dirname + "/client/build/index.html");
+});
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
+
+
 
 module.exports = app;
